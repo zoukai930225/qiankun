@@ -32,7 +32,7 @@ onUnmounted(() => {
 .micro-hr-admin-wrapper {
   width: 100%;
   height: calc(100vh - var(--top-tool-height) - var(--tags-view-item-height));
-  overflow: hidden;
+  overflow: auto;
   position: relative;
 }
 </style>
