@@ -54,6 +54,7 @@ const whitelist = ref(['/admin/team/schedule/dataDashboard', '/admin/hrAdmin/res
 const baseClass =
   'p-[var(--app-content-padding)] pt-[var(--app-content-padding-top)] w-[calc(100%-var(--app-content-padding)-var(--app-content-padding))] bg-[var(--app-content-bg-color)]'
 const computedClass = computed(() => {
+  if (fullPath.value?.startsWith('/admin/hrAdmin')) return ''
   return !whitelist.value.includes(fullPath.value) ? baseClass : ''
 })
 
