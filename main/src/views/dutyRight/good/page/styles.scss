@@ -1,0 +1,27 @@
+.good {}
+
+:deep(.el-table__body) {
+  .each-tag {
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+
+    &-info {
+      color: #0064FF;
+      background-color: #CCE0FF;
+    }
+
+    &-fail {
+      color: #EB3737;
+      background-color: #FFD9D9;
+    }
+
+    &-wait {
+      color: #666666;
+      background-color: #E5E5E5;
+    }
+  }
+}

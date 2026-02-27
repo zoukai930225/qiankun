@@ -1,0 +1,127 @@
+@page {
+  size: auto;
+  margin: 1.5cm 1.5cm;
+  @top-center {
+    content: '';
+    font-size: 12px;
+    color: #333;
+  }
+  @bottom-right {
+    content: '第 ' counter(page) ' 页 / 共 ' counter(pages) ' 页';
+    font-size: 12px;
+    color: #666;
+  }
+}
+* {
+  line-height: 1.4em;
+}
+.base-info {
+  display: flex;
+  border: 1px solid;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+.base-info .row {
+  flex: 49%;
+  height: 32px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  line-height: 32px;
+}
+.base-info .row:nth-of-type(2n) {
+  border-right: 0;
+}
+.base-info .row:nth-last-of-type(-n + 2) {
+  border-bottom: 0;
+}
+.base-info .cell {
+  display: flex;
+  padding-left: 2em;
+  align-items: center;
+  justify-content: center;
+}
+.base-info .label {
+  width: 6em;
+  padding-right: 2em;
+  border-right: 1px solid;
+  font-weight: 600;
+}
+.base-info .value {
+  flex: 1;
+}
+.base-info .label,
+.base-info .value {
+  text-align: center;
+}
+.contract-content {
+  font-size: 12px;
+}
+.contract-content.content-title {
+  font-weight: 600;
+  background: #d9e4bc;
+}
+.contract-content.content-title .cell {
+  box-shadow: inset 0px 1px #000;
+}
+.contract-content.row {
+  display: flex;
+  height: 32px;
+  line-height: 1.5em;
+}
+.contract-content.row .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min-content;
+  text-align: center;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  padding: 0 1em;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.contract-content.row .cell:last-of-type {
+  border-right: 0;
+  border-right: 1px solid;
+}
+.contract-content.row .goodsName {
+  flex: 1;
+  white-space: wrap;
+}
+.contract-content.row .sku {
+  flex: 1;
+}
+.contract-content.row .remark {
+  white-space: wrap;
+  flex: 1 !important;
+  white-space: pre-line;
+}
+.contract-content.addressRow .cell {
+  border: 0;
+}
+.contract-content.addressRow .cell > div {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  height: 45px !important;
+}
+.contract-content.addressRow .cell.sku,
+.contract-content.addressRow .cell.providerGoodsNo,
+.contract-content.addressRow .cell.formName,
+.contract-content.addressRow .cell.formCode,
+.contract-content.addressRow .cell.purchasedGoodsQuantity,
+.contract-content.addressRow .cell.price,
+.contract-content.addressRow .cell.amount,
+.contract-content.addressRow .cell.remark {
+  display: none;
+}
+.contract-content.addressRow .goodsName {
+  border: 1px solid;
+  border-top: 0;
+}
+.contract-content.addressRow .imgUrl {
+  border-bottom: 1px solid;
+  flex: 66.5%;
+  border-right: 1px solid;
+}

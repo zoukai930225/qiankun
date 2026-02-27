@@ -1,0 +1,108 @@
+:deep(.list-wrap .el-select__wrapper) {
+  background-color: #f2f6fc;
+  box-shadow: none;
+}
+
+.filter-wrap {
+  font-size: 14px;
+  color: #666666;
+}
+
+.list-wrap {
+  width: 100%;
+  min-width: 1500px;
+  background: linear-gradient(to bottom, #ebf2ff 0%, #ffffff 100%);
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 14px;
+
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    color: #666666;
+
+    .header-item {
+      width: 20%;
+      padding: 0 3px;
+      box-sizing: border-box;
+    }
+  }
+
+  .list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    margin: 10px 0;
+
+    .content-item {
+      width: 20%;
+      word-wrap: break-word;
+      word-break: break-all;
+      padding: 0 3px;
+      box-sizing: border-box;
+
+      // 分隔线
+      .line {
+        color: #b3bac9;
+        margin: 0 15px;
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.empty-img {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666666;
+}
+
+.more-btn {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  .more-btn-item {
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+    cursor: pointer;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .more-btn-item:hover {
+    width: 100%;
+    height: 28px;
+    background: #f3f4f7;
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #0078ff;
+  }
+}
+
+// 加载中的效果
+.loading-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 422px;
+}

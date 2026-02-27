@@ -1,0 +1,42 @@
+.SupplierEvaluation {
+  .total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 16px;
+  }
+  .table-cnt {
+    width: 100%;
+    :deep() {
+      .el-table__header .el-table__cell {
+        background-color: #f2f6fc;
+        color: #666;
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+  :deep() {
+    .pagination {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  .el-tag {
+    font-weight: 500;
+    &.el-tag--primary {
+      background-color: rgb(204, 224, 255);
+      color: var(--el-color-primary);
+      border-color: rgb(204, 224, 255);
+    }
+    &.el-tag--danger {
+      background-color: rgb(255, 230, 230);
+      color: #f56c6c;
+      border-color: rgb(255, 230, 230);
+    }
+  }
+}

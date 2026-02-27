@@ -1,0 +1,51 @@
+// .el-button--primary:not(.is-plain):not(.is-link) {
+//   background: #0064ff;
+//   color: #fff;
+// }
+
+.el-input__inner::-webkit-input-placeholder {
+  color: #999999;
+}
+.el-input__inner::-moz-placeholder {
+  color: #999999; /* 你想要的颜色 */
+}
+.el-input__inner::-ms-input-placeholder {
+  color: #999999; /* 你想要的颜色 */
+}
+.el-input__inner::placeholder {
+  color: #999999; /* 你想要的颜色 */
+}
+
+.el-input__inner {
+  color: #333; /* 你想要的颜色 */
+  font-size: 14px;
+}
+.el-input__wrapper {
+  height: 32px;
+}
+
+.el-table .el-table__cell {
+  color: #333;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.el-form-item__label {
+  font-size: 14px;
+  color: #666666;
+  line-height: 20px;
+}
+
+.el-select__placeholder {
+  font-size: 14px;
+  color: #333;
+  line-height: 20px;
+}
+
+.el-input__wrapper {
+  box-shadow: inset 0 0 0 1px #e5e5e5;
+}
+
+.el-form--inline .el-form-item {
+  margin-right: 50px;
+}

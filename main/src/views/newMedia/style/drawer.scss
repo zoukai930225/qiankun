@@ -1,0 +1,52 @@
+:deep(.el-drawer) {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  overflow: hidden !important;
+}
+:deep(.el-drawer__body) {
+  background-image: url('@/assets/imgs/drawer_bg.png') !important;
+  background-size: cover !important;
+  overflow: hidden !important;
+}
+
+.topView {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-bottom: 20px;
+  .drawerTitle {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    font-weight: 600;
+    margin: auto 0;
+  }
+  .close {
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+  }
+}
+.iconButton {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.drawerContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+.drawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+.dialogFormItemWidth {
+  width: 100%;
+}

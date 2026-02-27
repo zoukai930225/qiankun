@@ -1,0 +1,125 @@
+.scheme-table {
+  & {
+    --el-text-color-regular: #666;
+  }
+
+  .scheme-operate {
+    display: flex;
+    padding-bottom: 12px;
+    position: relative;
+    height: 32px;
+
+    .list_name {
+      color: #3D3D3D;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 32px;
+    }
+
+    &-form {
+      :deep() {
+        .el-checkbox {
+          margin-right: 20px !important;
+        }
+
+        .el-form-item__label {
+          color: #333;
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        .el-form-item {
+          margin: 0 !important;
+        }
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      right: 0;
+
+      .table_btn {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .pagination {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+
+    &-tips {
+      height: 34px;
+      line-height: 34px;
+      max-width: 200px;
+    }
+
+    &-page {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .handle_btn {
+    font-weight: 500;
+    padding: 0 6px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+  }
+
+  .more_btn {
+    border: none;
+    cursor: pointer;
+    padding: 0 6px;
+  }
+
+  .line-text {
+    display: inline-block;
+    width: 100%;
+  }
+
+  :deep() {
+    .vxe-cell--col-resizable {
+      &::before {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+.scheme-table {
+  :deep() {
+    .el-scrollbar__bar.is-horizontal {
+      height: 10px !important;
+      border-radius: 0 !important;
+    }
+
+    .el-button--danger{
+      background-color:  transparent !important;
+      color: #EB3737;
+      &.is-disabled{
+        color: #fab6b6;
+      }
+      &:hover{
+       color: #EA5F5F;
+      }
+    }
+
+    .el-popper {
+      padding: 10px;
+    }
+  }
+
+  .el-scrollbar__thumb {
+    border-radius: 10px;
+    background-color: #c1c1c1;
+  }
+
+  .el-scrollbar {
+    --el-scrollbar-opacity: 1 !important;
+    --el-scrollbar-hover-opacity: 1 !important;
+    --el-scrollbar-hover-bg-color: #c1c1c1;
+  }
+}

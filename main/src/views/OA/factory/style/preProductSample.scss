@@ -1,0 +1,208 @@
+.content{
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  .left{
+    margin-right: 18px;
+    width: 296px;
+
+  }
+  .right{
+    flex: 1;
+    .search{
+      :deep(.el-form--inline .el-form-item){
+        margin-right: 20px!important;
+      }
+    }
+    .info{
+      display: flex;
+      justify-content: space-between;
+      
+      .infoCard{
+        border-radius: 8px;
+        box-sizing: border-box;
+        height: 507px;
+        .header{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .statusMap{
+            display: flex;
+            .status{
+              display: flex;
+              align-items: center;
+              img{
+                margin-left: 16px;
+                margin-right: 8px;
+              }
+              span{
+                color: #666;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        
+        &.auditInfo{
+          width: 500px;
+          :deep(.auditBody){
+            padding: 0;
+          }
+          .auditContent{
+            height: 450px;
+            .selectAll{
+              padding: 0 18px;
+              background: #F4F6FA;
+              height: 43px;
+            }
+            .colorList{
+              .row{
+                &.title{
+                  color:#3D3D3D;
+                  font-size: 14px;
+                  font-weight: 600;
+                  line-height: 43px;
+                }
+                padding: 0 18px;
+                height: 43px;
+                border-bottom: 1px solid #e5e5e5;
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                .checkbox{
+                  width: 100px;
+                }
+                .auditRole{
+                  padding: 0 20px;
+                  flex: 1;
+                  display:flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  img{
+                    margin-right:10px;
+                  }
+                  span{
+                    font-size: 12px;
+                    color: #666;
+                  }
+                }
+                .status{
+                  box-sizing: border-box;
+                  text-align: center;
+                  width: 72px;
+                  padding: 12px 0;
+                  border-radius: 12px;
+                  background: #e5e5e5;
+                  font-size: 12px;
+                  color:#666;
+                  &.red{
+                    color:#EB3737;
+                    background:#FFDDDA;
+                  }
+                  &.green{
+                    color:#349B34;
+                    background:#D5F0D5;
+                  }
+                  &.orange{
+                    color:#DB6A0F;
+                    background: #F7DECB;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.basicInfo{
+          width: 336px;
+          .basicContent{
+            height: 370px;
+          }
+          :deep(.basicBody){
+            padding: 16px;
+          }
+          :deep(.basicCardFooter){
+            text-align: right;
+            padding: 10px 20px ;
+          }
+          :deep(.basicTableHeader){
+            background: #F4F6FA;
+            font-size: 14px;
+            color:#666;
+          }
+        }
+      }
+    }
+    .progress{
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .progressItem{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .title{
+          font-size: 14px;
+          color: #333;
+          font-weight: 600;
+          margin-right: 10px;
+        }
+        .content{
+          width: calc(100% - 70px);
+          display: flex;
+          justify-content: space-between;
+          .progressLine{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            .label{
+              font-size: 14px;
+              color: #999;
+              margin-bottom: 10px;
+            }
+            .line{
+              background: #e5e5e5;
+              height: 8px;
+              width: 96%;
+              
+            }
+            &:first-child{
+              .line{
+                border-radius: 8px 0 0 8px;
+              }
+            }
+            &:last-child{
+              .line{
+                border-radius: 0px 8px 8px 0;
+              }
+            }
+          }
+        }
+        
+      }
+    }
+  }
+  .commonCard{
+    border: none;
+    border-radius: 8px;
+    height: calc(100%);
+  }
+}
+.tips{
+  // width: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  .text{
+    width: 50px;
+  }
+  .label{
+    width: 80px;
+  }
+  img{
+    margin: 0 4px;
+  }
+}

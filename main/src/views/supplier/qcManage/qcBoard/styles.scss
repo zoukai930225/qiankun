@@ -1,0 +1,120 @@
+.card {
+  border-radius: 10px;
+  margin: 10px 5px;
+}
+
+.panel_body {
+  display: flex;
+
+  .panel_submit {
+    position: relative;
+    width: 400px;
+    height: 139px;
+    border-radius: 8px;
+    background: linear-gradient(179deg, #FFFFFF 2%, #F4F5FC 97%);
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    padding: 35px 30px;
+    margin-right: 36px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #0064FF;
+
+      .panel_submit_num {
+        color: #0064ff;
+      }
+    }
+
+    &_img {
+      width: 66px;
+      height: 74px;
+      position: absolute;
+      right: 30px;
+      top: 32px;
+    }
+
+    &_title {
+      color: #666;
+      font-size: 14px;
+      font-weight: normal;
+      display: inline-block;
+      width: 100%;
+    }
+
+    &_num {
+      margin-top: 20px;
+      color: #666;
+      font-size: 28px;
+      font-weight: 500;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .panel_card {
+    width: calc(100% - 436px);
+    display: flex;
+    height: 139px;
+    background: #f8f8f9;
+    border-radius: 4px;
+    border: 1px solid #dde2e9;
+
+    &_item {
+      flex: 1 0 auto;
+      width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px;
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+
+      // &:hover {
+      //   background: #f4f8ff;
+
+      //   .panel_card_item_value {
+      //     color: #0064ff;
+      //   }
+      // }
+
+      &_label {
+        font-size: 14px;
+        color: #666666;
+        margin-bottom: 20px;
+      }
+
+      &_value {
+        font-size: 28px;
+        font-weight: normal;
+        color: #0064ff;
+      }
+
+      &:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 1px;
+        height: 78%;
+        background: #dde2e9;
+      }
+    }
+  }
+}
+
+.list_card {
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  padding: 20px;
+  padding-top: 0px;
+
+  &_title {
+    color: #1C1D1D;
+    font-size: 16px;
+  }
+}

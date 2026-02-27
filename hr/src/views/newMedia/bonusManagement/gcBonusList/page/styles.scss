@@ -1,0 +1,36 @@
+:deep(.image-preview-container) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  .preview-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    object-fit: cover;
+  }
+
+  .image-count-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+}
+:deep(.el-table) {
+  .el-table__header th {
+    font-weight: 400 !important;
+  }
+  .multi {
+    width: 36px;
+  }
+  .el-table__cell {
+    padding: 7px 0;
+  }
+}

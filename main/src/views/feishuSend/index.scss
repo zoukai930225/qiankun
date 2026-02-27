@@ -1,0 +1,126 @@
+.empty-img {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666666;
+}
+
+.categorizedList {
+  min-width: 1000px;
+  &-type {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  &-card {
+    width: 100%;
+    padding: 6px 20px 6px;
+    box-sizing: border-box;
+    background-image: linear-gradient(
+      to top,
+      rgba(250, 252, 255, 0.19) 0%,
+      rgba(242, 247, 255, 0.78) 37%,
+      #ebf2ff 100%
+    );
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  &-header {
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    .header-item {
+      text-align: left;
+      padding: 10px 0;
+      box-sizing: border-box;
+      width: 23%;
+      min-width: 120px;
+      font-size: 14px;
+      color: #666666;
+    }
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 6px 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 16px;
+    .content-item {
+      width: 23%;
+      text-align: left;
+      min-width: 120px;
+      padding-right: 6px;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+  }
+  .content-item-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  // 操作
+  .action {
+    width: 200px;
+    min-width: 180px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &-btn {
+      color: #0064ff;
+      font-size: 14px;
+      cursor: pointer;
+      img {
+        width: 14px;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+    .deleteBtn {
+      color: #ff4d4f;
+    }
+  }
+}
+// 收件人
+.userListItem {
+  min-width: 70px;
+  background: #cad6f8;
+  border-radius: 13px;
+  margin: 0 5px 5px 0;
+  padding: 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .name {
+    margin: 0 8px;
+    font-size: 14px;
+  }
+  .closeBtn {
+    width: 8px;
+    cursor: pointer;
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}

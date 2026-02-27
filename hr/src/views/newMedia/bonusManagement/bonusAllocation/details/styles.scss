@@ -1,0 +1,162 @@
+.bonusAllocation {
+  :deep(.el-card) {
+    background-color: transparent;
+  }
+  :deep(.el-card__body) {
+    padding: 0 !important;
+  }
+  .card-sec-tit {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 16px 16px 16px 22px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &::after {
+      position: absolute;
+      left: 13px;
+      top: 18px;
+      content: '';
+      display: block;
+      width: 3px;
+      height: 10px;
+      background: #0064ff;
+    }
+  }
+  .main-sec-tit-btn {
+    padding: 7px 16px 7px 23px;
+    &::after {
+      top: 18px;
+    }
+  }
+}
+
+:deep(.bonus-form) {
+  padding: 0;
+
+  .card-base-cnt {
+    background: #fff;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-sec-content {
+    padding: 16px 16px 0;
+  }
+  .card-main-cnt {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-sec-main {
+    padding: 16px;
+  }
+
+  // 表格样式
+  .el-table {
+    .el-table__header {
+      .el-table__cell {
+        color: #666;
+      }
+    }
+    .el-table__body-wrapper {
+      .el-table__cell {
+        padding: 12px 8px;
+      }
+    }
+    th.el-table__cell {
+      background: #f2f6fc;
+    }
+    .required-icon {
+      color: #f56c6c;
+    }
+
+    // 表格内的表单项
+    .table-form-item {
+      margin-bottom: 0;
+
+      .el-form-item__content {
+        line-height: 32px;
+      }
+
+      .el-form-item__error {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding-top: 4px;
+        line-height: 1.5;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .el-form-item__label {
+    font-weight: 500;
+  }
+  .el-form-item {
+    min-width: 50%;
+  }
+
+  .el-input {
+    margin: 1px 0;
+  }
+  .card-sec-content {
+    .el-input,
+    .el-select {
+      width: 342px;
+    }
+    &.card-sec-content-gc {
+      .el-input,
+      .el-select {
+        width: 328px;
+      }
+    }
+  }
+
+  .el-form-item__label {
+    font-weight: 500;
+  }
+
+  :deep(.el-input-number .el-input__inner) {
+    text-align: left;
+  }
+
+  .unit-text {
+    margin-left: 8px;
+    color: #999;
+    font-size: 14px;
+  }
+
+  // GMV范围输入框
+  .gmv-range-container {
+    width: 100%;
+  }
+
+  .gmv-range-inputs {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    .range-form-item {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .range-input {
+      width: 100%;
+    }
+
+    .range-separator {
+      margin-top: 6px;
+      color: #606266;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.w-100\% {
+  width: 100%;
+}

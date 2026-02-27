@@ -1,0 +1,107 @@
+:deep(.el-table--border th.el-table__cell),
+:deep(.el-table td.el-table__cell) {
+  border-bottom: none !important;
+}
+
+:deep(.el-table--border .el-table__cell) {
+  border-right: none !important;
+}
+
+:deep(.el-table--group, .el-table--border) {
+  border: none !important;
+}
+
+:deep(.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell) {
+  background: #f8fafd;
+}
+
+.SWCommonTable {
+  .el-scrollbar__bar.is-horizontal {
+    height: 6px !important;
+    border-radius: 0 !important;
+  }
+
+  .el-scrollbar__thumb {
+    border-radius: 4px;
+    background-color: #c1c1c1;
+  }
+
+  .el-scrollbar {
+    --el-scrollbar-opacity: 1 !important;
+    --el-scrollbar-hover-opacity: 1 !important;
+    --el-scrollbar-hover-bg-color: #c1c1c1;
+  }
+}
+
+.SWFixedHeader {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.tableWrap {
+  padding: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(0,
+      rgba(250, 252, 255, 0.19) 0%,
+      rgba(242, 247, 255, 0.78) 37%,
+      #ebf2ff 100%);
+  border-radius: 6px;
+
+  :deep(.el-table) {
+    background-color: transparent;
+  }
+
+  /* 单元格底部间距 */
+  :deep(.el-table__body) {
+    -webkit-border-vertical-spacing: 13px;
+  }
+
+  /* 鼠标经过 */
+  :deep(.el-table__row:hover > td) {
+    background-color: #fff !important;
+  }
+
+  /* 行类名 */
+  .rowClassName {
+    background-color: #fff;
+  }
+
+  /* 设置行圆角 */
+  .rowClassName td:first-child,
+  .rowClassName th:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .rowClassName td:last-child,
+  .rowClassName th:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  /* 表头背景色 */
+  :deep(.headerRowClassName) {
+    background-color: transparent !important;
+  }
+
+  :deep(.el-table td.el-table__cell) {
+    border: none !important;
+  }
+
+  /* 表头样式 */
+  :deep(.headerCellClassName) {
+    background-color: transparent !important;
+    color: #333333;
+    border: none;
+    height: 50px !important;
+  }
+
+  /* 去掉表格底部的线 */
+  :deep(.el-table__inner-wrapper) {
+    &::before {
+      height: 0;
+    }
+  }
+}

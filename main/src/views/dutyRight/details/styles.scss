@@ -1,0 +1,29 @@
+.dutyRight {}
+
+.title {
+  font-size: 14px;
+  padding-left: 10px;
+  border-left: 3px solid #1E47AB;
+}
+
+.table-form {
+  :deep() {
+    .el-form-item__label {
+      padding: 0;
+    }
+
+    .el-input__wrapper {
+      height: auto;
+    }
+  }
+
+}
+
+.table-form-2 {
+  margin-top: 16px;
+  :deep() {
+    .el-input__wrapper {
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+:deep(.el-table__body) {
+  .each-tag {
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+
+    &-success {
+      color: #349B34;
+      background-color: #D6EBD6;
+    }
+
+    &-fail {
+      color: #EB3737;
+      background-color: #FFD9D9;
+    }
+  }
+}

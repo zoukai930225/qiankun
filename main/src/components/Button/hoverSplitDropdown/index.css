@@ -1,0 +1,60 @@
+/* 隐藏下拉浮层小箭头 */
+.hover-split-dropdown-popper .el-popper__arrow,
+.hover-split-dropdown-popper .el-popper__arrow::before {
+  display: none !important;
+}
+
+/* 右侧下拉按钮容器：左右 padding 10px */
+.hsd-right-btn {
+  padding: 0 10px;
+  position: relative;
+}
+
+/* 右侧下拉按钮中的白色竖线 */
+.hsd-divider {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hover-split-dropdown .el-button-group .el-button--primary:first-child {
+  border-right: unset;
+}
+
+.hover-split-dropdown .el-button-group .el-button--primary:last-child {
+  border-left: unset;
+}
+
+/* 让按钮组在右侧包裹 el-dropdown 仍能无缝衔接 */
+.hover-split-dropdown .el-button-group > .el-dropdown {
+  display: inline-flex;
+  margin-left: -1px; /* 覆盖组内相邻按钮的 -1px 叠边效果 */
+}
+
+/* 左侧主按钮去掉右边框，与右侧按钮合并圆角 */
+.hover-split-dropdown .el-button-group > .el-button:first-child {
+  border-right: unset;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* 右侧（被 el-dropdown 包裹的）按钮去掉左边框并合并圆角 */
+.hover-split-dropdown .el-button-group > .el-dropdown .el-button {
+  border-left: unset;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* 移除右侧dropdown按钮的focus样式 */
+.hover-split-dropdown .el-button-group > .el-dropdown .el-button:focus,
+.hover-split-dropdown .el-button-group > .el-dropdown .el-button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

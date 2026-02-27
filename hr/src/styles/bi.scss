@@ -1,0 +1,129 @@
+.tableColumnEB3737 {
+  font-weight: 900;
+  font-size: 16px;
+  // color: #eb3737;
+  line-height: 20px;
+}
+
+.tableColumn349B34 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #349b34;
+  line-height: 20px;
+}
+
+.tableColumn333333 {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+  line-height: 20px;
+}
+
+.bi-total-scan-detail-popover {
+  &[data-popper-placement^=left]>.el-popper__arrow:before {
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    right: -5px;
+    height: 12px !important;
+  }
+
+  &[data-popper-placement^=right]>.el-popper__arrow:before {
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 50%);
+    left: -5px;
+    height: 12px !important;
+  }
+
+  &[data-popper-placement^=bottom]>.el-popper__arrow:before {
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    bottom: 5px;
+    width: 12px !important;
+  }
+
+
+  &[data-popper-placement^=top]>.el-popper__arrow:before {
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    top: 5px;
+    width: 12px !important;
+  }
+
+  .el-popper__arrow::before {
+    transform: rotate(0) !important;
+    background: rgba(36, 52, 90, 0.9) !important;
+    border: none !important;
+  }
+}
+
+.bi-total-scan-btn-popover {
+  border: 1px solid #cccccc;
+
+  &[data-popper-placement^=bottom] {
+    margin-top: 2px;
+  }
+
+  &[data-popper-placement^=top] {
+    margin-bottom: 2px;
+  }
+}
+
+
+.bi-commonTableRow {
+  & {
+    --el-table-row-hover-bg-color: #E5EFFF;
+  }
+
+  td.el-table__cell {
+    background-color: inherit;
+  }
+}
+
+.bi-hightTableRow {
+  & {
+    --el-table-row-hover-bg-color: #FFFbcc;
+  }
+
+  td.el-table__cell {
+    background-color: #FFE866;
+  }
+}
+
+.bi-goood-salesStaticDialig {
+  padding: 0;
+  --el-border-color: #F0F0F0;
+}
+
+.bi-total-good-btn-popover {
+  border: 1px solid #cccccc;
+
+  &[data-popper-placement^=bottom] {
+    margin-top: -3px;
+  }
+
+  &[data-popper-placement^=top] {
+    margin-bottom: -3px;
+  }
+}
+
+.bi-table-box {
+  & {
+    --el-border-color-lighter: #cccccc
+  }
+
+  .el-table__inner-wrapper::before {
+    // background-color: transparent;
+  }
+
+  .el-scrollbar__bar.is-horizontal {
+    height: 6px !important;
+    border-radius: 0 !important;
+  }
+
+  .el-scrollbar__thumb {
+    border-radius: 4px;
+    background-color: #c1c1c1;
+  }
+
+  .el-scrollbar {
+    --el-scrollbar-opacity: 1 !important;
+    --el-scrollbar-hover-opacity: 1 !important;
+    --el-scrollbar-hover-bg-color: #c1c1c1;
+  }
+}

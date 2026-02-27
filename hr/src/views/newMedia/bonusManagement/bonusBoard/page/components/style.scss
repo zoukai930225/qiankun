@@ -1,0 +1,98 @@
+.board-card {
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+}
+.main-container {
+  .card-header {
+    .card-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #303133;
+      padding: 16px;
+      padding-left: 26px;
+      position: relative;
+      &::after {
+        position: absolute;
+        left: 16px;
+        top: 19px;
+        content: '';
+        display: block;
+        width: 3px;
+        height: 10px;
+        background: #0064ff;
+      }
+    }
+  }
+  :deep(.el-card) {
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    .el-card__header {
+      padding: 14px 16px;
+      background-color: #f2f6fc;
+      border-bottom: 1px solid #e5e5e5;
+      .more-btn {
+        font-size: 14px;
+        padding: 0;
+      }
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+
+        .section-label {
+          font-size: 14px;
+          color: #333;
+        }
+        .el-select {
+          font-weight: 400;
+        }
+      }
+    }
+    .el-card__body {
+      padding: 16px;
+    }
+  }
+  :deep(.el-table) {
+    --el-table-border-color: #e5e5e5;
+    .el-table__header th {
+      background-color: #f2f6fc;
+      height: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .el-table__body td {
+      height: 48px;
+      padding: 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .rank-badge-text {
+      font-size: 14px;
+      color: #6b7280;
+      padding: 2px 8px;
+      background-color: #f3f4f6;
+      border-radius: 50%;
+    }
+    .amount-text-primary {
+      color: #0064ff;
+    }
+  }
+}
+.section-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 9.54px;
+  background: #fcfdff;
+  border: 1px solid #e5e5e5;
+  padding: 77px 0;
+  flex: 1;
+  .empty-text {
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #999999;
+    padding: 8px 14px 0 0;
+  }
+}

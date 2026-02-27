@@ -1,0 +1,39 @@
+.el-dialog.customDialog{
+      padding: 0px 0px;
+     .el-dialog__header.show-close{
+         padding: 12px 10px;
+        width: calc(100% - 60px);
+        .el-dialog__headerbtn{
+            margin-top: 2px;
+        }
+     }
+    
+    .el-dialog__body{
+        width: calc(100% - 40px);
+        // background-color: red;
+        position: relative;
+        padding: 20px 20px !important;
+        &::before{
+             content: '';
+             position: absolute;
+             width: 100%;
+             left: 0px;
+             top:-0px;
+             height: 1px;
+             background-color: #f0f0f0;
+        }
+         &::after{
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 100%;
+             height: 1px;
+             background-color: #f0f0f0;
+        }
+    }
+    .el-dialog__footer{
+        padding: 10px;
+    }
+
+}

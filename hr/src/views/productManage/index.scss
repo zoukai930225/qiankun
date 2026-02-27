@@ -1,0 +1,87 @@
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: #2f8df5;
+  text-decoration: none;
+}
+
+// 标题选择--选择店铺
+.title-select {
+
+  // 标题-货品管理
+  .title-text {
+    margin: 0 12px 0 16px;
+    color: #666666;
+  }
+}
+
+// 标题右边的操作栏
+.title-operation {
+  width: 100%;
+  min-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  font-family:
+    PingFangSC,
+    PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+
+  cursor: pointer;
+
+  img {
+    margin: 0 6px;
+  }
+}
+
+// 标题上的按钮
+.title-btn {
+  width: 49px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: #2f8df5;
+  border-radius: 4px;
+  margin: 0 14px;
+  cursor: pointer;
+}
+
+// 修改鼠标移入的背景色
+:deep(.el-table tbody tr:hover > td) {
+  background: #f2f6fc !important;
+}
+
+.table_icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.textarea-wrap {
+  .textarea-btn {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+  }
+}
+
+:deep(.el-textarea .el-textarea__inner) {
+  box-shadow: none;
+}
+
+:deep(.title-select .el-select__placeholder) {
+  color: #2f8df5;
+}
+
+:deep(.el-dialog) {
+  border-radius: 14px;
+}
+
+.title-operation div.active {
+  color: #2f8df5;
+}

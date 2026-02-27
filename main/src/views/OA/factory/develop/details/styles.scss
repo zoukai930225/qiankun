@@ -1,0 +1,56 @@
+.factoryDevelop {
+}
+:deep(.el-card__body.el-card__body) {
+  padding: 0 !important;
+}
+.header {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+
+  .btn {
+    margin-left: auto;
+  }
+}
+
+.inner {
+  padding: 20px;
+
+  .infoCard {
+    background: #F4F6FA;
+    border: 1px solid #E5E5E5;
+    padding: 10px 10px 4px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+
+    .title {
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .del {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+
+    .form {
+      margin-top: 16px;
+
+      :deep(.el-form-item--default) {
+        margin-bottom: 16px;
+      }
+
+      :deep(.el-textarea__inner) {
+        color: #333;
+      }
+    }
+  }
+}

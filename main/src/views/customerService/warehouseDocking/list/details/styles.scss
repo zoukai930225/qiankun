@@ -1,0 +1,56 @@
+.info_card {
+  margin-bottom: 10px;
+  border-radius: 8px;
+
+  :deep() {
+    .el-card__header {
+      padding: 16px 20px;
+    }
+
+    .el-form-item {
+      margin: 0 8px 18px 0 !important;
+    }
+
+    .el-input-number {
+      width: 100%;
+
+      .el-input__inner {
+        text-align: left !important;
+      }
+    }
+
+    .el-textarea__inner {
+      color: #333;
+    }
+  }
+}
+
+.w_50 {
+  width: calc(50% - 8px);
+}
+
+.w_100 {
+  width: 98%;
+}
+
+.item-body {
+  height: calc(100% - 38px);
+  overflow-y: auto;
+}
+
+.btn_group {
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  width: 100%;
+  text-align: right;
+}
+
+.half_label {
+  :deep(.el-form-item__label) {
+    line-height: 16px !important;
+  }
+}
+:deep(.card_info){
+  background: #f8f8f9;
+}

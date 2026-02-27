@@ -1,0 +1,153 @@
+:deep(.el-checkbox-group) {
+  line-height: 1.5;
+}
+
+:deep(.contentWrap .el-input__wrapper) {
+  border: 1px solid #0064ff;
+  box-shadow: none;
+}
+
+.evaluateCategoryWrap {
+  background-color: #fff;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  padding: 18px 18px 0 0;
+  box-sizing: border-box;
+}
+.contentWrap {
+  .level1Title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 0;
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+    &-right {
+      width: 30px;
+      height: 26px;
+      background: rgba(0, 100, 255, 0.17);
+      border-radius: 4px;
+      text-align: center;
+      line-height: 26px;
+    }
+    &-name {
+      background: #f2f6fc;
+      border-radius: 4px;
+      padding: 9px 44px 9px 12px;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333333;
+    }
+    &-icon {
+      width: 5px;
+      height: 14px;
+      background: #0064ff;
+      border-radius: 3px;
+      margin-right: 12px;
+    }
+  }
+  // 二级分类列表
+  .level2List {
+    padding: 0 17px;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    &-item {
+      width: 378px;
+      height: 408px;
+      border-radius: 10px;
+      background-image: url(@/assets/imgs/evaluate/evaluate.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      border: 1px solid #e5e5e5;
+      position: relative;
+      &-delete {
+        position: absolute;
+        right: 0;
+        width: 28px;
+        height: 28px;
+        background: rgba(235, 55, 55, 0.14);
+        border-radius: 0px 9px 0px 10px;
+        text-align: center;
+        line-height: 28px;
+        cursor: pointer;
+      }
+      .level2Title {
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-size: 18px;
+        color: #333333;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .level3List {
+        width: 312px;
+        height: 286px;
+        background: #ffffff;
+        box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.07);
+        border-radius: 4px;
+        margin-left: 20px;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+
+        &-item {
+          width: 100%;
+          font-size: 14px;
+          color: #333333;
+          margin: 4px 0;
+        }
+        .text-content {
+        }
+      }
+
+      // 三级分类添加按钮
+      .level3List-item-btn {
+        display: flex;
+        margin: 15px 0 0 20px;
+        .btn {
+          width: 66px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          border-radius: 4px;
+          text-align: center;
+          img {
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+        }
+        .deleteBtn {
+          background: rgba(235, 55, 55, 0.11);
+          color: #eb3737;
+          margin-right: 20px;
+        }
+        .addBtn {
+          background: rgba(0, 100, 255, 0.11);
+          color: #0064ff;
+        }
+      }
+    }
+  }
+}
+.empty-img {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666666;
+}
+
+.no-select {
+  user-select: none; /* 适用于现代浏览器 */
+  -webkit-user-select: none; /* 适用于 Safari */
+  -moz-user-select: none; /* 适用于 Firefox */
+  -ms-user-select: none; /* 适用于 IE 10+ */
+}

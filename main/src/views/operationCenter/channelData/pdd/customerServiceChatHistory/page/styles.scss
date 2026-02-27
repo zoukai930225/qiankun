@@ -1,0 +1,7 @@
+.ex-screen {
+  :deep(.g-query) {
+    .el-divider {
+      display: none;
+    }
+  }
+}

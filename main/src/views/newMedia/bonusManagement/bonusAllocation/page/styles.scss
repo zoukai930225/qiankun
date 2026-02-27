@@ -1,0 +1,11 @@
+.bonus-tabs {
+  // margin-bottom: 16px;
+  :deep(.el-tabs__nav-wrap::after) {
+    height: 1px;
+  }
+}
+:deep(.el-table) {
+  .el-table__header th {
+    font-weight: 400 !important;
+  }
+}

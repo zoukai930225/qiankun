@@ -1,0 +1,71 @@
+.opinion-form {
+  :deep(.el-form-item) {
+    width: calc(50% - 12px);
+    margin-right: 24px;
+    margin-bottom: 20px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &.full-width-item {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .el-input,
+    .el-select,
+    .el-date-picker,
+    .el-cascader {
+      width: 100%;
+    }
+
+    .el-textarea {
+      width: 100%;
+    }
+  }
+}
+.public-opinion-registration-details {
+  :deep() {
+    .el-card {
+      background: transparent;
+    }
+    .el-card__body {
+      padding: 0 !important;
+    }
+  }
+  .pr-form-wrapper {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  .form-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 20px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 21px;
+      width: 3px;
+      height: 10px;
+      background: #0064ff;
+    }
+  }
+  .el-form {
+    padding: 0 20px 20px;
+  }
+}
+.public-opinion-registration-details-view {
+  :deep() {
+    .el-form-item__label:before {
+      content: '' !important;
+    }
+  }
+}

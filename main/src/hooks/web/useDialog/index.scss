@@ -1,0 +1,89 @@
+// sw-dialog Hook 样式文件
+// 针对通过 useDialog hook 创建的对话框组件的样式定义
+// sw-dialog 主要样式
+
+.sw-dialog-background {
+  border-radius: 4px !important;
+  padding: unset;
+
+  >.el-dialog__header {
+    // background: #f8f8f9;
+    margin-bottom: 0px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  >.el-dialog__footer {
+    margin-bottom: 0px;
+    padding: 0;
+  }
+
+  .el-dialog {
+    background: #f8f8f9;
+  }
+
+  .sw-dialog-header-content {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  >.el-dialog__body {
+    // background: #f8f8f9;
+    overflow: hidden auto;
+    padding: 20px !important;
+  }
+
+  .sw-dialog-content-wrapper {
+    // padding: 20px;
+    background-color: #fff;
+    // border-radius: 8px;
+  }
+
+  .sw-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background: #ffffff;
+    // box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 0 0 8px 8px;
+    // border-top: 1px solid #eceaea;
+
+    .el-button:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    .el-button {
+      font-size: 14px;
+    }
+  }
+}
+
+// dialog 头部样式
+.dialogTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .cursor-pointer {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// dialog content 样式
+.sw-dialog-content {
+  // min-height: 100px;
+}

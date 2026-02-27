@@ -1,0 +1,30 @@
+.storageProblemFeedback {
+  :deep(.status-type-span) {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    padding: 4px 16px;
+    border-radius: 14px;
+  }
+  :deep(.el-table) {
+    .el-table__header th {
+      font-weight: 400 !important;
+    }
+    .multi {
+      width: 36px;
+    }
+    .el-table__body {
+      .el-table__cell {
+        padding: 4px 0;
+        .cell {
+          min-height: 42px;
+          /* line-height: 42px; */
+          display: flex;
+          /* flex-direction: column; */
+          align-items: center;
+        }
+      }
+    }
+  }
+
+}

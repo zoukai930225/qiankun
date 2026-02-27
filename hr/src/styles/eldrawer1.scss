@@ -1,0 +1,61 @@
+// 修改备注的文本框背景
+:deep(.el-textarea__inner),
+:deep(.el-input__wrapper),
+:deep(.el-select__wrapper) {
+  background-color: #f8f8f9 !important;
+  box-shadow: none !important;
+  color: #606266 !important;
+}
+
+:deep(.el-drawer) {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+// 背景
+:deep(.el-drawer__body) {
+  background-image: url('@/assets/imgs/drawer_bg.png') !important;
+  background-size: cover !important;
+}
+
+.drawer-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.drawerTitle {
+  font-size: 14px;
+  display: flex;
+  color: #333333;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 18px 0;
+}
+.drawerContent {
+  width: 100%;
+  padding: 20px 20px 10px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  &-title {
+    margin: 0 0 18px 25px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  .drawerContent-title-icon {
+    width: 3px;
+    height: 10px;
+    background: #0064ff;
+    margin-right: 6px;
+  }
+}
+.drawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}

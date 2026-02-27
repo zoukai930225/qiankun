@@ -1,0 +1,363 @@
+:deep(.card_info) {
+  .el-card__body {
+    padding: 0;
+  }
+}
+
+.product-list {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(394px, 1fr));
+  gap: 20px;
+  min-height: 180px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  // 响应式调整 - 根据实际需求可选
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+
+    .product-item {
+      width: 100%; // 让卡片自适应 grid 单元格宽度
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+    .product-item {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .product-item {
+      width: 100%;
+    }
+  }
+
+  &.product-list-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-item {
+    // width: 394px;
+    // height: 336px;
+    box-sizing: border-box;
+    background: RGBA(235, 235, 235, 0.5);
+    position: relative;
+    padding: 16px 10px 22px;
+    border-radius: 10px;
+    // 【新增】默认透明边框，防止 hover 时出现 1px 的抖动
+    border: 1px solid transparent;
+    // 【新增】添加过渡效果，让交互更丝滑
+    transition: all 0.3s ease;
+
+    // 【新增】Hover 样式 和 激活(点击)样式
+    &:hover,
+    &.is-active {
+      // background: linear-gradient(180deg, #ffffff 0%, #f4f5fc 99%);
+      background-color: #f6f7fc;
+      border: 1px solid rgba(104, 127, 243, 0.2);
+      // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); // 可选：建议加一点阴影增加层次感
+    }
+    .product-item-title {
+      display: flex;
+      min-height: 28px;
+      align-items: center;
+      max-width: calc(100% - 60px);
+      gap: 6px;
+
+      :deep(.overflow-tooltip__content) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0px;
+        max-width: 260px;
+        color: #333333;
+      }
+    }
+
+    .product-item-subtitle {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+
+      :deep(.overflow-tooltip__content) {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: normal;
+        /* 文字/一级 */
+        color: #333333;
+        width: 0;
+        flex: 1;
+      }
+    }
+
+    .product-item-label {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: 0px;
+      /* 文字/二级 */
+      color: #666666;
+    }
+
+    .product-item-value {
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: normal;
+      letter-spacing: 0px;
+      /* 文字/二级 */
+      color: #333333;
+      &.product-item-value-bold {
+        font-weight: 500;
+      }
+    }
+
+    .product-item-content {
+      border: 1px solid #e5e5e5;
+      margin-top: 14px;
+      background-color: #fff;
+      // border-radius: 8px;
+      .img-line {
+        // padding: 6px;
+        display: flex;
+        // align-items: center;
+        background-color: #fff;
+        gap: 6px;
+
+        .img-item {
+          position: relative;
+          background: #f5f9ff;
+          border-radius: 4px;
+          .img-item-mask {
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            padding: 0 4px;
+            font-size: 12px;
+            // line-height: 14px;
+            line-height: 16px;
+            letter-spacing: 0px;
+
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            justify-content: center;
+          }
+        }
+
+        // .img-item {
+        //   width: 125px;
+        //   height: 120px;
+        // }
+        .info-item {
+          flex: 1;
+          width: 0;
+          margin-top: 9px;
+        }
+      }
+
+      .product-progress {
+        height: 60px;
+        opacity: 1;
+        padding: 8px 14px;
+        background: #fff;
+        border-top: 1px dashed #e5e5e5;
+        box-sizing: border-box;
+        margin-top: 10px;
+        /* 应用/边框 */
+        display: flex;
+        align-items: center;
+
+        .product-progress-item {
+          flex: 1;
+          width: 0;
+        }
+      }
+    }
+
+    .button-group {
+      margin-top: 10px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      :deep(.el-button) {
+        margin-left: unset;
+      }
+    }
+
+    .product-item-select-status {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 0 10px 0 10px;
+      color: #666666;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: normal;
+      text-align: center;
+      letter-spacing: 0px;
+      padding: 4px 6px;
+      background: rgba(102, 102, 102, 0.2);
+
+      &.warning {
+        background: #f8e1cf;
+        color: #db6a0f;
+      }
+
+      &.success {
+        background: rgba(52, 155, 52, 0.2);
+        color: #349b34;
+      }
+
+      &.draft {
+        background: #cce0ff;
+        color: var(--el-color-primary);
+      }
+    }
+
+    .product-approval-status {
+      padding: 4px 6px;
+      gap: 6px;
+
+      background: rgba(248, 225, 207, 0.5);
+      display: flex;
+      border-radius: 4px;
+      align-items: center;
+      color: #db6a0f;
+
+      .product-approval-status-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: url('@/assets/svgs/oa/buyer/dot_background.svg') no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .product-approval-status-text {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: normal;
+        letter-spacing: 0px;
+        white-space: nowrap;
+
+        font-variation-settings: 'opsz' auto;
+        /* 主题色/橙色 */
+      }
+
+      &.success {
+        background: rgba(52, 155, 52, 0.1);
+        color: #349b34;
+
+        .product-approval-status-icon {
+          background: url('@/assets/svgs/oa/buyer/success_background.svg') no-repeat center center;
+          background-size: 100% 100%;
+        }
+      }
+
+      &.warning {
+        .product-approval-status-icon {
+          background: url('@/assets/svgs/oa/buyer/warning_background.svg') no-repeat center center;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
+
+.empty-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.pagination-wrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+* {
+  --warning-color: #db6a0f;
+  --success-color: #349b34;
+  --warning-background: rgba(248, 225, 207, 0.5);
+  --success-background: rgba(52, 155, 52, 0.1);
+}
+
+.header-filter-container {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    margin-right: 12px;
+    font-size: 16px;
+    // font-weight: 700;
+    color: #333; // Adjust based on your theme
+  }
+}
+
+.filter-checkbox {
+  margin-right: 10px;
+  background-color: #fff;
+
+  :deep(.el-checkbox__label) {
+    padding-left: 8px;
+  }
+
+  .checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .checkbox-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+}
+
+.confirm-status-wrapper {
+  display: inline-flex;
+  align-items: center; /* 关键：垂直居中 */
+  vertical-align: middle; /* 关键：让这个 wrapper 自身相对于右侧文字居中 */
+  // margin-right: 6px; /* 图标和右侧文字的间距 */
+  line-height: 1; /* 防止行高撑开导致偏移 */
+}
+
+.confirm-result-icon {
+  width: 20px;
+  height: 20px;
+  display: block; /* 消除图片底部的 3px 默认间隙 */
+  object-fit: contain;
+}
+
+.product-item-rematch-tips {
+  width: calc(100% - 32px);
+  position: absolute;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #eb3737;
+  line-height: 16px;
+}
+.is-clickable {
+  cursor: pointer;
+}

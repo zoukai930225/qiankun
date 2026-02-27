@@ -1,0 +1,136 @@
+.card{
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  .header{
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    .btn{
+      margin-left: auto;
+    }
+  }
+  .inner{
+    padding: 20px 19px;
+    border-top: 1px solid #f0f0f0;
+    .infoCard{
+      background: #F4F6FA;
+      border: 1px solid #E5E5E5;
+      padding: 10px 10px 4px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+      .title{
+        font-size: 14px;
+        color:#333;
+        font-weight: 600;
+      }
+      .del{
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        &:hover{
+          opacity: .6;
+        }
+      }
+      .form{
+        margin-top: 16px;
+        :deep(.el-form-item--default){
+          margin-bottom: 16px;
+        }
+        :deep(.el-textarea__inner){
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.infoContent{
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  .radios{
+    background: #F8F8F9;
+    border: 1px solid #e5e5e5;
+    width: 275px;
+    height: 350px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    border-radius: 8px;
+    padding: 10px 0;
+    :deep(.el-radio-group){
+      display: block;
+      width: 92%;
+      margin: auto;
+    }
+    .radio{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .status{
+        width: 94px;
+        height: 28px;
+        border-radius: 103px;
+        line-height: 28px;
+        font-size: 14px;
+        background: #D5F0D5;
+        color:#349B34;
+        text-align: center;
+        &.red{
+          background: #FFDDDA;
+          color:#EB3737;
+        }
+      }
+    }
+  }
+  .basicInfo{
+    width: 561px;
+    height: 350px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    :deep(.basicInfoCardBody){
+      padding: 20px 20px 6px;
+    }
+    :deep(.basicInfoCardFooter){
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      .disabledBtn{
+        width: 74px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 4px;
+        background: #e5e5e5;
+        color: #333;
+        font-size: 14px;
+        text-align: center;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+}
+
+.priceInfo{
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.borderBtn{
+  border-color: #0064ff;
+  color: #0064ff;
+}
+.inputWrapper{
+  height: 32px;
+  background: #f8f8f9;
+  box-shadow: 0 0 0 1px #e5e5e5 inset;
+  padding: 1px 11px;
+  border-radius: 4px;
+}

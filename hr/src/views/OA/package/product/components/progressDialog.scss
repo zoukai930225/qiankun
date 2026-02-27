@@ -1,0 +1,321 @@
+.content-wapper {
+  width: 100%;
+  min-width: 1400px;
+  overflow: auto;
+
+  .left-wapper {
+    border-radius: 8px;
+    background: #ffffff;
+    padding-left: 20px;
+    margin-right: 0px;
+    padding-top: 20px;
+    bottom: 10px;
+    overflow: auto;
+    height: auto;
+  }
+
+  .right-wapper {
+    width: 409px;
+    background: #f4f7fe;
+    display: flex;
+    flex-direction: row
+  }
+}
+
+.itemValue {
+  width: max-content;
+  align-items: center;
+  height: 26px;
+  line-height: 26px;
+  background: #cad6f8;
+  border-radius: 26px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  margin: 0 3px 3px 0;
+
+  .itemDesc {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .avatorLogo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+}
+
+.drawerContent-disabledInput {
+  width: 100%;
+  padding: 0 16px;
+  min-height: 32px;
+  box-sizing: border-box;
+  background-image: url(@/assets/imgs/common/input_disabled.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  word-wrap: break-word;
+}
+
+:deep(.el-drawer__body) {
+  // background-image: url('@/assets/imgs/drawer_bg.png') !important;
+  // background-size: cover !important;
+  // background: #f8f8f8;
+}
+
+// 修改备注的文本框背景
+:deep(.nodeForm) {
+
+  .el-textarea__inner,
+  .el-input__wrapper,
+  .el-select__wrapper {
+    background-color: #f8f8f9 !important;
+    box-shadow: none !important;
+  }
+
+  .el-form-item {
+    width: calc(100%);
+  }
+}
+
+.file-list {
+  margin: 0;
+  margin-top: -10px;
+  margin-left: 100px;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: flex;
+    line-height: 26px;
+    margin-bottom: 5px;
+
+    .name {
+      padding-left: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .document {
+      width: 14px;
+      height: 14px;
+      color: #909399;
+      padding-left: 6px;
+      padding-top: 6px;
+    }
+
+    .close {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      color: #606266;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: #f5f7fa;
+
+      .name {
+        color: #0064ff;
+      }
+
+      .close {
+        display: block;
+      }
+    }
+  }
+}
+
+.file-list1 {
+  margin-left: 138px;
+  margin-top: -45px;
+}
+
+.drawer-wapper {
+  min-width: 700px;
+  background: #f6f6f6;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100%;
+  // background: linear-gradient(102deg, #ecf0f9 0%, #effdfd 100%);
+  background: #f4f7fe;
+}
+
+.title-wapper {
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+
+  .close {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+  }
+}
+
+.form-wapper {
+  .header-wapper {
+    margin-bottom: 16px;
+    align-items: center;
+
+    .icon {
+      width: 3px;
+      height: 10px;
+      background: #0064ff;
+      margin-right: 5px;
+    }
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-wapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
+
+// 提交人、审核人
+.audit-wrap {
+  margin-bottom: 20px;
+  position: relative;
+
+  &:first-child {
+    &::before {
+      content: '';
+      display: flex;
+      position: absolute;
+      left: 2px;
+      top: 20px;
+      height: 100%;
+      width: 100%;
+      border-left: 1px dashed #d4e5ff;
+    }
+  }
+
+  .audit-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.proposedBg,
+.auditBg,
+.confirmBg,
+.releaseBg {
+  width: 246px;
+  height: 96px;
+  background-image: url('@/assets/imgs/oa/product/proposedBg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
+  padding: 12px 0;
+  box-sizing: border-box;
+  margin-left: -7px;
+
+  .allBg-title {
+    font-weight: bold;
+
+    .avatar {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    .name {
+      margin: 0 8px;
+    }
+  }
+
+  .allBg-auditNode {
+    margin-left: 12px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+    height: 24px;
+    // width: 196px;
+    background: linear-gradient(270deg, #f4f6fa 0%, #d4e1f9 100%);
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+    line-height: 24px;
+    padding-left: 6px;
+    text-align: left;
+  }
+
+  .allBg-text {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+.allBg-remark {
+  width: 100%;
+  height: 152px;
+  border-radius: 6px;
+  border: 1px solid #d1d3d8;
+  font-size: 14px;
+  color: #999999;
+  margin-top: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-left: -7px;
+  overflow-y: auto;
+}
+
+.form-right-itemCurrent {
+  border: 1px solid #0064ff;
+  // border-radius: 4px;
+  // background: red;
+}
+
+// 左边的信息展示
+
+.auditStatus {
+  margin-left: 10px;
+  width: 54px;
+  height: 20px;
+  background: rgba(255, 140, 0, 0.1);
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ff8c00;
+  text-align: center;
+  line-height: 20px;
+}

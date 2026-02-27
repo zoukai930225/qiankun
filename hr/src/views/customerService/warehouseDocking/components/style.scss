@@ -1,0 +1,25 @@
+.abutment_card {
+  border-radius: 8px !important;
+
+  :deep(.el-card__body) {
+    padding: 6px 20px 10px 20px;
+  }
+
+  .nums {
+    color: #EA0000;
+  }
+
+  :deep() {
+    .el-tabs__item.is-active {
+      .nums {
+        color: var(--el-color-primary) !important;
+      }
+    }
+
+    .el-tabs__item:hover {
+      .nums {
+        color: var(--el-color-primary) !important;
+      }
+    }
+  }
+}

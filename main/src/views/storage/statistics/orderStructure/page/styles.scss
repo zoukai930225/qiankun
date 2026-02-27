@@ -1,0 +1,24 @@
+.orderStructure {
+  .summary-cnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0 20px;
+    .summary-cnt-value {
+      color: #4b65cf;
+      font-size: 16px;
+      font-weight: 500;
+      &.valid-count {
+        color: #00bf7c;
+      }
+      &.proportion {
+        color: #ff3535;
+      }
+    }
+  }
+  :deep() {
+    .scheme-operate {
+      // display: none;
+    }
+  }
+}

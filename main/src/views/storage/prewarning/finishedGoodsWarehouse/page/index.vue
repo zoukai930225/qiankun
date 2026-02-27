@@ -1,0 +1,124 @@
+<template>
+  <ex-screen>
+    <query-scheme
+      :scheme="scheme"
+      v-model="searchData"
+      name="Finishedgoodswarehouse"
+      :show-expand="false"
+    />
+    <scheme-table
+      :btn-list="btns"
+      :handle-column="handleColumn"
+      :screen="screen"
+      name="Finishedgoodswarehouse"
+      :column="column"
+      :table-data="dataList"
+      :list-name="'成品仓预警列表'"
+    />
+  </ex-screen>
+</template>
+
+<script lang="tsx">
+export default { name: 'Finishedgoodswarehouse' }
+</script>
+
+<script lang="tsx" setup>
+import { PageItem, BtnItem } from '@/components/template/config/type'
+import { usePage, SearchItem } from './config'
+import request from '@/config/axios'
+
+const detailsRef = ref<any>(),
+  plateRef = ref(),
+  boardRef = ref()
+
+const userInfo = ref<any>({ isManagement: false, isHrbp: false })
+
+const {
+  dataList,
+  page,
+  loading,
+  scheme,
+  btns,
+  searchData,
+  column,
+  screen,
+  stateInfo,
+  statistics,
+  handleColumn,
+  setRouterInfo
+} = usePage({ userInfo: toRef(userInfo, 'value') })
+
+// const { getPermissionInfo, grabCheck } = useRole('人力行政');
+
+// 处理请求数据
+const setParamsData = (noPage: boolean = false) => {
+  return noPage
+    ? { ...searchData.value }
+    : { ...searchData.value, pageNum: page.value.page, pageSize: page.value.size }
+}
+
+// 查询
+const onSearch = () => {
+  const params: any = setParamsData()
+  loading.value = true
+  request
+    .get({ url: `/api/stageBacklog/queryCpcWarning`, params: params })
+    .then((res: any) => {
+      dataList.value = res.records?.length ? [...res.records] : []
+      page.value = { ...page.value, total: res.total }
+    })
+    .finally(() => {
+      loading.value = false
+    })
+}
+
+// 重置
+const resetForm = () => {
+  page.value = { ...new PageItem() }
+  searchData.value = { ...new SearchItem() }
+  onSearch()
+}
+
+// 状态筛选查询（无状态筛选可删除）
+const getStateInfo = () => {
+  // const params: any = setParamsData();
+  // request.post({ url: `/api/employeeMonthlyAssessment/statistics`, data: params }).then((res: any) => {
+  //   res && (stateInfo.value = { ...res });
+  // });
+}
+
+// 按钮回调
+const onButtonClick = (btn: BtnItem) => {
+  ;['board'].includes(btn.fun) && boardRef?.value?.openView()
+  ;['solution', 'seal'].includes(btn.fun) && plateRef?.value?.openDialog(btn.fun)
+}
+
+// 操作列回调
+const viewDetails = (type: string, item?: any, btn?: any) => {
+  detailsRef?.value?.openView(item, type)
+}
+
+onMounted(() => {
+  dataList.value = []
+  onSearch()
+})
+
+setRouterInfo()
+
+provide('FinishedgoodswarehouseForm', {
+  searchData,
+  dataList,
+  page,
+  loading,
+  stateInfo,
+  statistics,
+  setParamsData,
+  resetForm,
+  onSearch,
+  onButtonClick,
+  viewDetails
+})
+</script>
+<style lang="scss" scoped>
+@use './styles.scss';
+</style>

@@ -1,0 +1,94 @@
+<template>
+  <ex-screen is-details name="*page*" :site="{ right: 80, bottom: 80 }" ref="screenRef">
+    <div class="*page-class*_body" v-loading="loading">
+     <div> 详情内容区 </div>
+    </div>
+    <template #footer>
+      <div> 按钮操作区 </div>
+      <!-- <el-button type="primary" v-if="viewType !== 'view'" @click="submitForm" :disabled="loading">提交</el-button> -->
+    </template>
+  </ex-screen>
+</template>
+
+<script lang="tsx">
+export default { name: '*page-details*Details' };
+</script>
+
+<script lang="tsx" setup>
+import { useDetails, DataItem } from "./details";
+import { cloneDeep, debounce } from "lodash-es";
+import { executablePage } from "./executable";
+import request from '@/config/axios';
+
+const router = useRouter(), route = useRoute();
+
+const message = useMessage();
+
+const { viewType, queryInfo, initRouter } = useDetails();
+
+const detailsRef = ref<any>(), loading = ref<boolean>(false), dataValue = ref<DataItem>({ ...new DataItem() }), bukValue = ref<DataItem>({ ...new DataItem() });
+
+// const baseRef = ref(), sizeRef = ref(), screenRef = ref(), trailRef = ref();
+
+// 校验
+const checkValue = async () => {
+  // const baseValid: boolean = baseRef?.value ? await baseRef.value.checkValue() : true;
+  // const sizeValid: boolean = sizeRef?.value ? await sizeRef.value.checkValue() : true;
+  // const trailValid: boolean = trailRef?.value ? await trailRef.value.checkValue() : true;
+  // return baseValid && sizeValid && trailValid;
+  return true;
+};
+
+// 提交
+const submitForm = async () => {
+  const valid: boolean = await checkValue();
+  valid && (loading.value = true, submit());
+};
+
+// 实际提交（防抖）
+const submit = debounce(async () => {
+  // let params: any = cloneDeep({ ...dataValue.value });
+  // const url: string = `/api/qcQualityInspectionReportInfo/${dataValue.value?.id ? 'edit' : 'add'}${dataValue.value.qualityInspectionCycle === 3 ? 'LastData' : 'EarlyMiddleData'}`
+  // request.post({ url, data: params }).then(() => {
+  //  message.success('操作成功');
+  //  screenRef?.value?.backToPage('refresh');
+  // }).finally(() => {
+  //  loading.value = false;
+  // });
+}, 500);
+
+// 新增初始化
+const initValue = () => {
+  dataValue.value = { ...new DataItem };
+  bukValue.value = cloneDeep({ ...dataValue.value });
+};
+
+// 详情获取
+const getDataValue = () => {
+  loading.value = true;
+  request.get({ url: `/api/qcQualityInspectionReportInfo/${queryInfo.value.id}` }).then((res: any) => {
+    if (res?.id) {
+      dataValue.value = { ...res };
+      bukValue.value = cloneDeep({ ...dataValue.value });
+    }
+  }).finally(() => {
+    loading.value = false;
+  });
+};
+
+onMounted(() => {
+  initRouter(() => {
+    queryInfo.value?.id ? getDataValue() : initValue();
+  });
+});
+
+executablePage('*page-executable*', route, router);
+
+provide('*page-provide*Details', { dataValue, bukValue, viewType });
+
+/**************************************以上文件文件内容非必要不可删除，按需追加使用******************************************************* */
+
+</script>
+<style lang="scss" scoped>
+@use './styles.scss';
+</style>

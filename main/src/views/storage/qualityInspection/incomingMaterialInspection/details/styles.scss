@@ -1,0 +1,37 @@
+.incoming-material-inspection-details {
+  .result-text.is-bad {
+    color: var(--el-color-danger);
+  }
+
+  // .goods-header {
+  //   display: flex;
+  //   justify-content: flex-end;
+  //   margin-bottom: 10px;
+  //   color: #666;
+  //   font-size: 14px;
+  // }
+
+  // .result-text.is-bad {
+  //   color: var(--el-color-danger);
+  // }
+
+  // :deep(.goods-table) {
+  //   .el-table__header th {
+  //     background: #fff;
+  //   }
+  // }
+}
+
+:deep(.card_info) {
+  background: unset !important;
+
+  .el-card__body {
+    padding: 0 !important;
+  }
+
+  .goods-total {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

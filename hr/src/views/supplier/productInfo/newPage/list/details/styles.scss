@@ -1,0 +1,89 @@
+.drawerContent {
+  width: 100%;
+  padding: 16px 20px 1px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+
+  &-title {
+    margin: 0 0 18px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .drawerContent-title-icon {
+    width: 3px;
+    height: 10px;
+    background: #0064ff;
+    margin-right: 6px;
+  }
+}
+
+// 上传人选择器
+.eloption .el-select-dropdown__wrap .el-select-dropdown__item {
+  height: 50px !important;
+}
+
+// 下拉选项样式
+.peopleOption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px;
+  box-sizing: border-box;
+  width: 100px;
+  .left-wapper {
+    display: flex;
+    align-items: center;
+  }
+  .img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 14px;
+    .text {
+      height: 20px;
+      line-height: 20px;
+    }
+    .name {
+      font-size: 14px;
+      color: #333333;
+    }
+    .desc {
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+}
+// 选择的人样式
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  background: #cad6f8;
+  border-radius: 13px;
+  padding: 1px 6px;
+  box-sizing: border-box;
+
+  .name {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .avatorLogo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
+
+

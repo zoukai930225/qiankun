@@ -1,0 +1,54 @@
+.customer-service-board {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: hidden;
+  .customer-service-container {
+    height: 100%;
+    background-color: #fff;
+    padding: 0px 20px 20px;
+    border-radius: 8px;
+  }
+  :deep(.customer-service-data-board-tabs) {
+    .el-tabs__header {
+      margin-bottom: 0;
+    }
+    .el-tabs__content {
+      flex: 1;
+      overflow: auto;
+    }
+    .el-tabs__item {
+      font-weight: normal;
+      line-height: 46px;
+      height: 46px;
+      color: #666666;
+      &.is-active {
+        color: #0064ff;
+      }
+    }
+  }
+}
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+
+  .board-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #303133;
+  }
+}
+
+// Time Filter 样式调整
+:deep(.time-filter) {
+  .topDateFilter-bg {
+    background: transparent;
+  }
+}

@@ -1,0 +1,44 @@
+.listTable{
+  margin-bottom: 16px;
+  .listHeader{
+    display: flex;
+    align-items: center;
+    .title{
+      color: #333;
+      font-weight: 600;
+    }
+    .btn{
+      margin-left: auto;
+    }
+  }
+  .list{
+    margin-top: 10px;
+    &.editTable{
+      :deep(.el-table--default){
+        .cell{
+          padding: 16px 12px;
+          padding-top: 2px;
+        }
+        
+      }
+      :deep(.el-form-item--default),:deep(.el-form-item){
+        margin-bottom: 0;
+        .el-form-item__label{
+          padding: 0;
+        }
+      }
+      :deep(.el-table__cell){
+        padding-bottom: 2px;
+        padding-top: 12px;
+      }
+    }
+    
+    .el-table {
+      :deep(.el-popper) {
+        max-width: 500px !important;
+        white-space: pre-wrap !important;
+      }
+      
+    }
+  }
+}

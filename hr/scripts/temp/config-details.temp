@@ -1,0 +1,26 @@
+// 表格数据结构
+export class DataItem {
+  // orderFollowIds: Array<string> = [];
+  id?: string = '';
+};
+
+// 通用入参
+export const useDetails = (params: any = {}) => {
+  const route = useRoute();
+
+  // 外部组件入参
+  const { userInfo } = params;
+
+  // 模板必备变量(不可修改，按需追加，自行导出使用)
+  const viewType = ref<string>('view'), queryInfo = ref<any>({});
+
+  // 初始化路由
+  const initRouter = (fun: Function = () => { }) => {
+    queryInfo.value = { ...route.query };
+    viewType.value = String(route?.query?.type || 'view');
+    fun();
+  };
+
+  return { viewType, queryInfo, initRouter }
+}
+

@@ -1,0 +1,11 @@
+:root {
+  /** 推广管理模块常量定义 **/
+  --promotion-left-width: 449px;
+  --promotion-right-width: 900px;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

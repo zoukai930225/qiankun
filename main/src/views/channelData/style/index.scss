@@ -1,0 +1,26 @@
+.mainContainer {
+  background: #f4f7fe;
+  position: relative;
+  width: calc(100%);
+  &-dateFilterHeader {
+    width: calc(100%);
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    &-dateFilter {
+      margin-right: 20px;
+      margin-left: auto;
+    }
+  }
+  .exportImg {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+  }
+}
+.exportableBg {
+  position: absolute;
+  bottom: 99999px;
+}

@@ -1,0 +1,266 @@
+:deep(.el-drawer) {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  overflow: hidden !important;
+}
+:deep(.el-drawer__body) {
+  background-image: url('@/assets/imgs/drawer_bg.png') !important;
+  background-size: cover !important;
+  overflow: hidden !important;
+}
+.topView {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-bottom: 20px;
+  .drawerTitle {
+    font-size: 14px;
+    color: #333333;
+    line-height: 20px;
+    font-weight: 600;
+    margin: auto 0;
+  }
+  .close {
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+  }
+}
+
+.drawerContent {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  &-title {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0;
+    .line {
+      width: 3px;
+      height: 10px;
+      background: #0064ff;
+      margin-right: 6px;
+    }
+    .commonAddBtn {
+      margin-left: auto;
+      width: 68px;
+    }
+  }
+  &-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    // 基本信息样式
+    .card {
+      width: 418px;
+      height: 132px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ebeef5;
+      &.userCard {
+        border: none;
+        background: url('@/assets/imgs/system/user/userBg.png');
+        background-repeat: no-repeat;
+        .inner {
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          .left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            .top {
+              display: flex;
+              .name {
+                font-size: 22px;
+                font-weight: bold;
+                color: #333;
+                margin-right: 6px;
+              }
+              .employeeNo {
+                width: 90px;
+                height: 26px;
+                line-height: 26px;
+                border-radius: 100px;
+                background: #fef4bf;
+                text-align: center;
+                color: #ad5f00;
+                font-size: 13px;
+              }
+            }
+            .center {
+              margin: 14px 0 5px;
+              font-size: 16px;
+              color: #333;
+            }
+            .bottom {
+              font-size: 14px;
+              color: #666;
+            }
+          }
+          .right {
+            .avatar {
+              width: 106px;
+              height: 106px;
+              // border-radius: 50%;
+              background-image: url('@/assets/imgs/system/user/avatarBg.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              display: flex;
+              align-items: center;
+              img {
+                margin: auto;
+                width: 85.87px;
+                height: 85.87px;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      &.assetCard {
+        .header {
+          width: 100%;
+          height: 33px;
+          padding: 8px 16px;
+          box-sizing: border-box;
+          background: #f8f9fc;
+          display: flex;
+          align-items: center;
+          border-radius: 8px 8px 0 0;
+          img {
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+          }
+          span {
+            color: #3d3d3d;
+            font-size: 14px;
+          }
+        }
+        .fixedTable {
+          width: 100%;
+          height: 98px;
+          overflow: hidden;
+          .content {
+            height: 64px;
+            .row:nth-last-of-type(1) {
+              .col {
+                border-bottom: none;
+              }
+            }
+          }
+          .empty {
+            height: 100%;
+            display: flex;
+            div {
+              margin: auto;
+              font-size: 14px;
+              color: #909399;
+            }
+          }
+          .row {
+            display: flex;
+            height: 33px;
+            line-height: 33px;
+            color: #333;
+            font-size: 14px;
+            &.title {
+              color: #666;
+            }
+            .col {
+              flex: auto;
+              width: 33.33%;
+              box-sizing: border-box;
+              padding-left: 16px;
+              border-bottom: 1px solid #ebeef5;
+              border-right: 1px solid #ebeef5;
+              &:nth-of-type(3) {
+                border-right: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 店铺、角色权限列表
+    .permission {
+      width: 418px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          color: #333;
+          font-size: 14px;
+        }
+        .btn {
+          width: 80px;
+          height: 32px;
+          border-radius: 4px;
+          background: #0064ff;
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+      .list {
+        border-radius: 8px;
+        border: 1px solid #e2edfc;
+        margin-top: 10px;
+        .title {
+          background: #f9fafc;
+          box-sizing: border-box;
+          height: 40px;
+          line-height: 40px;
+          padding-left: 8px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          font-size: 14px;
+          color: #666;
+        }
+        .treeData {
+          width: 100%;
+          display: flex;
+          .left {
+            .channel {
+              display: flex;
+              align-items: center;
+              img {
+                width: 16px;
+                height: 16px;
+                margin-right: 10px;
+                margin-left: 10px;
+              }
+            }
+            .store {
+              margin-left: 20px;
+            }
+          }
+          .icon {
+            margin-left: auto;
+            margin-right: 12px;
+          }
+        }
+        :deep(.el-tree-node__content) {
+          height: 32px;
+          border-top: 1px solid #e2edfc;
+          .el-tree-node__expand-icon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.drawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}

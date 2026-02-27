@@ -1,0 +1,35 @@
+:deep(.fabric-composition-container) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+:deep(.fabric-composition-tag) {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #f8f8f9;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1;
+}
+
+:global(.fabric-composition-tooltip .fabric-composition-container) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+:global(.fabric-composition-tooltip .fabric-composition-tag) {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #f8f8f9;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1;
+}

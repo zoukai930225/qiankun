@@ -1,0 +1,83 @@
+:deep(.el-drawer) {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+  overflow: hidden !important;
+  background-color: #F8F8F9 !important;
+}
+
+:deep(.el-drawer__body) {
+  // background-image: url('@/assets/imgs/drawer_bg.png') !important;
+  // background-size: cover !important;
+}
+
+.drawerTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drawer {
+  background-color: #fff;
+
+  .el-drawer__header {
+    margin-bottom: 0;
+
+    .el-drawer__title {
+      font-size: 14px;
+      color: #333333;
+      line-height: 20px;
+      font-style: normal;
+    }
+  }
+}
+
+.drawerTitle {
+  font-family: AlibabaPuHuiTi_2_75_SemiBold;
+  font-size: 14px;
+  color: #333333;
+  line-height: 20px;
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.drawerContent {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  &-title {
+    margin: 0 0 18px 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .drawerContent-title-icon {
+    width: 3px;
+    height: 10px;
+    background: #0064ff;
+    margin-right: 6px;
+  }
+}
+
+.drawerFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+.drawer_btn {
+  text-align: right;
+  margin-top: 10px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.dialogFormItemWidth {
+  width: 100%;
+}
