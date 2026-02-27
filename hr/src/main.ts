@@ -80,6 +80,7 @@ let app: VueApp<Element> | null = null
 
 const render = async (props: any = {}) => {
   const { container } = props
+  const isQiankun = !!qiankunWindow.__POWERED_BY_QIANKUN__
 
   // 避免在同一个容器上重复挂载
   if (app) {
@@ -109,7 +110,6 @@ const render = async (props: any = {}) => {
 
   app.component((ElCollapseTransition as any).name, ElCollapseTransition)
 
-  await router.isReady()
   VxeUIAll.use(VXETablePluginElement)
 
   // @ts-ignore
@@ -131,11 +131,15 @@ const render = async (props: any = {}) => {
     return
   }
 
-  app.mount(mountContainer)
-
-  if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
-    // 独立运行时才需要自动刷新逻辑
-    // import.meta.env.VITE_DETECTION === 'true' && autoRefresh();
+  if (isQiankun) {
+    // Qiankun 模式：先挂载应用再异步等待路由就绪，避免 mount 生命周期超时
+    app.mount(mountContainer)
+    router.isReady().then(() => {
+      console.log('[hrAdmin] router ready (qiankun)')
+    })
+  } else {
+    await router.isReady()
+    app.mount(mountContainer)
     Logger.prettyPrimary(`欢迎使用`, import.meta.env.VITE_APP_TITLE)
   }
 }
