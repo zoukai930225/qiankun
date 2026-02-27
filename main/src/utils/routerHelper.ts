@@ -129,20 +129,19 @@ export const generateRoute = (routes: AppCustomRouteRecordRaw[]): AppRouteRecord
         } as AppRouteRecordRaw
         // 菜单
       } else {
-        // 对后端传component组件路径和不传做兼容（如果后端传component组件路径，那么path可以随便写，如果不传，component组件路径会根path保持一致）
-        const index = route?.component
-          ? modulesRoutesKeys.findIndex((ev) => ev.includes(route.component))
-          : modulesRoutesKeys.findIndex((ev) => ev.includes(route.path))
+        // hrAdmin 微应用的所有子路由统一使用微应用容器组件承载，
+        // 避免 includes 模糊匹配到 main 中残留的同名组件文件
+        if (route.path.startsWith('/admin/hrAdmin')) {
+          data.component = () => import('@/views/hrAdmin/MicroHrAdmin.vue')
+        } else {
+          // 对后端传component组件路径和不传做兼容（如果后端传component组件路径，那么path可以随便写，如果不传，component组件路径会根path保持一致）
+          const index = route?.component
+            ? modulesRoutesKeys.findIndex((ev) => ev.includes(route.component))
+            : modulesRoutesKeys.findIndex((ev) => ev.includes(route.path))
 
-        if (index === -1) {
-          // 针对 hrAdmin 微应用的子路由：统一使用微应用容器组件承载
-          if (route.path.startsWith('/admin/hrAdmin')) {
-            data.component = () => import('@/views/hrAdmin/MicroHrAdmin.vue')
-          } else {
-            // 其它没有找到组件的路由不注册，避免产生无效路由告警
+          if (index === -1) {
             continue
           }
-        } else {
           data.component = modules[modulesRoutesKeys[index]]
         }
       }
