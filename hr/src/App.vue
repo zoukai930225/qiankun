@@ -22,7 +22,11 @@ import '@/styles/dialog.scss';
 import MessageDrawer from '@/layout/components/UserMessage/src/components/MessageDrawer.vue';
 const printerDataStore = printerData()
 import { UserNotification } from '@/layout/components/UserNotification'
+import { qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
+
 defineOptions({ name: 'APP' })
+
+const isQiankun = !!qiankunWindow.__POWERED_BY_QIANKUN__
 
 const { getPrefixCls } = useDesign()
 const prefixCls = getPrefixCls('app')
@@ -65,30 +69,32 @@ onMounted(() => {
   dictStore.setDictMap(true)
   dictStore.setDesignFields(true)
 
-  //这里准备连接打印机
-  // 创建socket实例
-  const socketData = new Socket(printerDataStore.printerSocket)
-  socketData.open(
-    (openBool) => {
-      printerDataStore.printerState = openBool
-    },
-    (msg) => {
-      if (msg.resultAck.callback != undefined) {
-        const callbackName = msg.resultAck.callback.name
-        const msgInfo = msg.resultAck.info
-        printerDataStore.msgInfo = msgInfo
-        if (callbackName == 'onCoverStatusChange') {
-          //盒盖状态：0-闭合、1-打开
-          console.log('盒盖状态', msgInfo.capStatus)
-        } else if (callbackName == 'onElectricityChange') {
-          //"power" : 0-4, // 电池电量等级（共5档）
-          console.log('电池电量等级', msgInfo.power)
+  if (!isQiankun) {
+    //这里准备连接打印机
+    // 创建socket实例
+    const socketData = new Socket(printerDataStore.printerSocket)
+    socketData.open(
+      (openBool) => {
+        printerDataStore.printerState = openBool
+      },
+      (msg) => {
+        if (msg.resultAck.callback != undefined) {
+          const callbackName = msg.resultAck.callback.name
+          const msgInfo = msg.resultAck.info
+          printerDataStore.msgInfo = msgInfo
+          if (callbackName == 'onCoverStatusChange') {
+            //盒盖状态：0-闭合、1-打开
+            console.log('盒盖状态', msgInfo.capStatus)
+          } else if (callbackName == 'onElectricityChange') {
+            //"power" : 0-4, // 电池电量等级（共5档）
+            console.log('电池电量等级', msgInfo.power)
+          }
         }
       }
-    }
-  )
-  // 创建打印实例
-  printerDataStore.printerClass = new NMPrintSocket(socketData);
+    )
+    // 创建打印实例
+    printerDataStore.printerClass = new NMPrintSocket(socketData);
+  }
   setTheme();
 });
 
@@ -99,20 +105,29 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <el-watermark :font="font" :content="[userStore.user.realName || '', userStore?.user?.phone || '']"
-    :z-index="9999999999999" class="watermark">
+  <!-- Qiankun 模式：不渲染水印和全局组件，由主应用提供 -->
+  <template v-if="isQiankun">
     <ConfigGlobal :size="currentSize">
-      <RouterView :class="greyMode ? `${prefixCls}-grey-mode` : ''" />
-      <routerSearch />
-
-      <userInfoDrawer />
-      <!-- 消息 -->
-      <MessageDrawer />
-      <!-- 消息卡片 -->
-      <UserNotification />
+      <RouterView :class="[greyMode ? `${prefixCls}-grey-mode` : '', 'qiankun-app-root']" />
     </ConfigGlobal>
-  </el-watermark>
-  <teleport-plan-container />
+  </template>
+  <!-- 独立运行模式 -->
+  <template v-else>
+    <el-watermark :font="font" :content="[userStore.user.realName || '', userStore?.user?.phone || '']"
+      :z-index="9999999999999" class="watermark">
+      <ConfigGlobal :size="currentSize">
+        <RouterView :class="greyMode ? `${prefixCls}-grey-mode` : ''" />
+        <routerSearch />
+
+        <userInfoDrawer />
+        <!-- 消息 -->
+        <MessageDrawer />
+        <!-- 消息卡片 -->
+        <UserNotification />
+      </ConfigGlobal>
+    </el-watermark>
+    <teleport-plan-container />
+  </template>
 </template>
 <style lang="scss">
 $prefix-cls: #{$namespace}-app;
@@ -146,5 +161,10 @@ body {
 
 .#{$prefix-cls}-grey-mode {
   filter: grayscale(100%);
+}
+
+.qiankun-app-root {
+  width: 100%;
+  height: 100%;
 }
 </style>

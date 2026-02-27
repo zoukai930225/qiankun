@@ -5,12 +5,16 @@ import { Backtop } from '@/components/Backtop'
 import { Setting } from '@/layout/components/Setting'
 import { useRenderLayout } from './components/useRenderLayout'
 import { useDesign } from '@/hooks/web/useDesign'
+import { qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
+import AppView from './components/AppView.vue'
 
 const { getPrefixCls } = useDesign()
 
 const prefixCls = getPrefixCls('layout')
 
 const appStore = useAppStore()
+
+const isQiankun = !!qiankunWindow.__POWERED_BY_QIANKUN__
 
 // 是否是移动端
 const mobile = computed(() => appStore.getMobile)
@@ -46,6 +50,14 @@ const renderLayout = () => {
 export default defineComponent({
   name: 'Layout',
   setup() {
+    if (isQiankun) {
+      return () => (
+        <section class={[prefixCls, 'w-[100%] h-[100%]']}>
+          <AppView />
+        </section>
+      )
+    }
+
     onMounted(async () => {
       await nextTick(() => {
         setTimeout(() => {
