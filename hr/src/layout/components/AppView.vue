@@ -5,9 +5,12 @@
 import { useAppStore } from '@/store/modules/app'
 import { useTagsViewStore } from '@/store/modules/tagsView'
 import { useRoute } from 'vue-router'
+import { qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
 // import { Footer } from '@/layout/components/Footer'
 
 defineOptions({ name: 'AppView' })
+
+const isQiankun = !!qiankunWindow.__POWERED_BY_QIANKUN__
 
 const appStore = useAppStore()
 const layout = computed(() => appStore.getLayout)
@@ -18,9 +21,27 @@ const footer = computed(() => appStore.getFooter)
 
 const tagsViewStore = useTagsViewStore()
 
+const qiankunCaches = ref<string[]>([])
+
 const getCaches = computed((): string[] => {
+  if (isQiankun) {
+    return qiankunCaches.value
+  }
   return tagsViewStore.getCachedViews
 })
+
+if (isQiankun) {
+  const route = useRoute()
+  watch(
+    () => route.name,
+    (name) => {
+      if (name && typeof name === 'string' && !route.meta?.noCache && !qiankunCaches.value.includes(name)) {
+        qiankunCaches.value.push(name)
+      }
+    },
+    { immediate: true }
+  )
+}
 
 const tagsView = computed(() => appStore.getTagsView)
 const fullPath = ref()

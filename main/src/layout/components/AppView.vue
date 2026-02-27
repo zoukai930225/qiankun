@@ -22,6 +22,13 @@ const getCaches = computed((): string[] => {
   return tagsViewStore.getCachedViews
 })
 
+const getRouteKey = (route: any): string => {
+  if (route.path?.startsWith('/admin/hrAdmin')) {
+    return '__micro_hr_admin__'
+  }
+  return route.fullPath
+}
+
 const tagsView = computed(() => appStore.getTagsView)
 const fullPath = ref()
 const route = useRoute()
@@ -92,7 +99,7 @@ provide('reload', reload)
     <router-view v-if="routerAlive">
       <template #default="{ Component, route: routeProps }">
         <keep-alive :include="getCaches">
-          <component :is="Component" :key="routeProps.fullPath" />
+          <component :is="Component" :key="getRouteKey(routeProps)" />
         </keep-alive>
       </template>
     </router-view>
