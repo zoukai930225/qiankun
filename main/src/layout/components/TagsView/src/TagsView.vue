@@ -17,6 +17,10 @@ import { useTemplateRefsList } from '@vueuse/core'
 import { ElScrollbar } from 'element-plus'
 import { useScrollTo } from '@/hooks/event/useScrollTo'
 import detailsRouter from '@/router/modules/details';
+import { CACHE_KEY, useCache } from '@/hooks/web/useCache';
+import { treeToArray } from '@/utils';
+
+const { wsCache } = useCache();
 
 const { getPrefixCls } = useDesign()
 
@@ -311,8 +315,23 @@ const move = (to: number) => {
   start()
 }
 
+const resolveMenuPaths = (menus, parentPath = '') => {
+  if (!menus) return
+  for (const menu of menus) {
+    if (menu.path && !menu.path.startsWith('/')) {
+      menu.path = `${parentPath}/${menu.path}`.replace(/\/+/g, '/')
+    }
+    if (menu.children?.length) {
+      resolveMenuPaths(menu.children, menu.path)
+    }
+  }
+  return menus
+}
+
 const routerNameShow = (item: any) => {
-  let name: string = t(item?.meta?.title as string) || '';
+  const list: any = wsCache.get(CACHE_KEY.ROLE_ROUTERS).filter((item: any) => !item.path.startsWith('/bi') && !item.path.startsWith('/otr') && !(item.pId === '0' && item.path === '/workbench') && item.visible);
+  const targetValue: any = treeToArray(resolveMenuPaths(list)).find((rs: any) => rs.path === item.path);
+  let name: string = t(item?.meta?.title as string) || targetValue?.name || '';
   if (item?.meta?.hidden && item?.name.includes('Details') && !!item?.query?.type) {
     switch (item.query.type) {
       case 'view': name += '-详情'; break;
