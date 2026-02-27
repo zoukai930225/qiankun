@@ -1310,37 +1310,6 @@ const remainingRouter: AppRouteRecordRaw[] = [
     ]
   },
   {
-    path: '/admin/hrAdmin',
-    component: Layout,
-    name: 'HrAdminMicro',
-    meta: {
-      hidden: false,
-      title: '人资中心(微应用)',
-      icon: 'ep:user'
-    },
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/hrAdmin/MicroHrAdmin.vue'),
-        name: 'HrAdminMicroIndex',
-        meta: {
-          title: '人资中心(微应用)',
-          noCache: true
-        }
-      },
-      {
-        // 匹配 /admin/hrAdmin 下的所有子路径，交给微应用内部路由处理
-        path: ':pathMatch(.*)*',
-        component: () => import('@/views/hrAdmin/MicroHrAdmin.vue'),
-        name: 'HrAdminMicroWildcard',
-        meta: {
-          hidden: true,
-          noCache: true
-        }
-      }
-    ]
-  },
-  {
     path: '/supplier/questionnaire',
     component: () => import('@/views/supplier/questionnaire/index.vue'),
     name: 'SupplierQuestionnaire',
