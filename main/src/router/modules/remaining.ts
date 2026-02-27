@@ -1,6 +1,22 @@
 import { Layout } from '@/utils/routerHelper'
+import { CACHE_KEY, useCache } from '@/hooks/web/useCache'
 
 const { t } = useI18n()
+
+const findMenuTitle = (menus: any[], targetPath: string): string => {
+  if (!menus) return ''
+  for (const menu of menus) {
+    const fullPath = menu.pPath ? `${menu.pPath}/${menu.path}`.replace(/\/+/g, '/') : menu.path
+    if (fullPath === targetPath || menu.path === targetPath) {
+      return menu.name || ''
+    }
+    if (menu.children?.length) {
+      const found = findMenuTitle(menu.children, targetPath)
+      if (found) return found
+    }
+  }
+  return ''
+}
 /**
  * redirect: noredirect        当设置 noredirect 的时候该路由在面包屑导航中不可被点击
  * name:'router-name'          设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题
@@ -1305,6 +1321,35 @@ const remainingRouter: AppRouteRecordRaw[] = [
           noTagsView: false,
           icon: 'ep:user',
           title: '组件开发'
+        }
+      }
+    ]
+  },
+  {
+    path: '/admin/hrAdmin',
+    component: Layout,
+    name: 'HrAdminMicro',
+    meta: {
+      hidden: true
+    },
+    children: [
+      {
+        path: ':pathMatch(.*)*',
+        component: () => import('@/views/hrAdmin/MicroHrAdmin.vue'),
+        name: 'HrAdminMicroWildcard',
+        beforeEnter: (to) => {
+          const { wsCache } = useCache()
+          const menus = wsCache.get(CACHE_KEY.ROLE_ROUTERS)
+          if (menus) {
+            const title = findMenuTitle(menus, to.path)
+            if (title) {
+              to.meta.title = title
+            }
+          }
+        },
+        meta: {
+          hidden: true,
+          noCache: true
         }
       }
     ]
